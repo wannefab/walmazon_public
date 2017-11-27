@@ -1,0 +1,17 @@
+.appHeader{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.SearchBar{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width:80%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+
+}

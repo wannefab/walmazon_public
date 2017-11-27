@@ -1,0 +1,56 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.8.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+
+group = 'ch.propulsion'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+
+ext.assertJVersion         = '3.6.2'
+ext.hibernateVersion       = '5.2.8.Final'
+ext.jacksonDateTimeVersion = '2.8.7'
+// Special syntax for overriding spring-boot-dependencies
+ext['hibernate.version'] = hibernateVersion
+
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-actuator')
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.boot:spring-boot-starter-jdbc')
+	compile('org.springframework.boot:spring-boot-starter-mail')
+	compile('org.springframework.boot:spring-boot-starter-security')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:${jacksonDateTimeVersion}")
+	//compile("org.hibernate:hibernate-java8:${hibernateVersion}")
+	compile("org.hibernate:hibernate-entitymanager:${hibernateVersion}")
+	compile("org.hibernate:hibernate-core")
+	
+	runtime('com.h2database:h2')
+	
+	compileOnly('org.projectlombok:lombok')
+	
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testCompile('org.springframework.security:spring-security-test')
+	testCompile("org.assertj:assertj-core:${assertJVersion}")
+}
+
+

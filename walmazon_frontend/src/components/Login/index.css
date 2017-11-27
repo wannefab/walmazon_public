@@ -1,0 +1,33 @@
+.tabContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+}
+
+.tabForm{
+    width: 350px;
+}
+
+
+.loginContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.loginForm{
+    width: 100%;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+.radioButtons{
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width:90%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 10px;
+    
+}

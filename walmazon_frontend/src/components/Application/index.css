@@ -1,0 +1,25 @@
+.TileContainer{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width:90%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 70px;
+}
+
+img {
+    position:absolute;
+    max-width: auto;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+.Tile{
+    width: 296px;
+    height: 198px;
+    margin-right: 2px;
+    margin-left: 2px;
+    margin-bottom: 4px;
+
+}

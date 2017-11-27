@@ -1,0 +1,34 @@
+package ch.propulsion.walmazon.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import ch.propulsion.walmazon.domain.Token;
+
+@Repository
+public interface TokenRepository extends JpaRepository<Token, String> {
+
+	List<Token> findByUserId(long userID);
+	
+	@Modifying
+	@Query(
+		    value = "DELETE FROM Token t WHERE t.token = ?1",
+		    nativeQuery = true
+		  )
+	void deleteByToken(String token);
+	
+	@Modifying
+	@Query(
+		    value = "DELETE FROM Token t WHERE t.user_id = ?1",
+		    nativeQuery = true
+		  )
+	void deleteByUserId(long id);
+
+}
+
+
+

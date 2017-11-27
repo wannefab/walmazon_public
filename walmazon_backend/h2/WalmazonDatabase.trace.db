@@ -1,0 +1,797 @@
+2017-11-23 10:26:40 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM PRODUCT P WHERE P.ID >= ? AND P.NAME CONTAINS[*] ? ORDER BY P.ID ASC LIMIT 0,? "; SQL statement:
+SELECT * FROM Product p WHERE p.id >= ? AND p.name CONTAINS ? ORDER BY p.id ASC LIMIT 0,? [42000-196]
+2017-11-23 10:29:24 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM PRODUCT P WHERE P.ID >= ? AND P.NAME CONTAINS[*] ? ORDER BY P.ID ASC LIMIT 0,? "; SQL statement:
+SELECT * FROM Product p WHERE p.id >= ? AND p.name CONTAINS ? ORDER BY p.id ASC LIMIT 0,? [42000-196]
+2017-11-23 10:38:29 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Function "FT_REINDEX" not found; SQL statement:
+CALL FT_REINDEX() [90022-196]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.readJavaFunction(Parser.java:2487)
+	at org.h2.command.Parser.readFunction(Parser.java:2539)
+	at org.h2.command.Parser.readTerm(Parser.java:2876)
+	at org.h2.command.Parser.readFactor(Parser.java:2390)
+	at org.h2.command.Parser.readSum(Parser.java:2377)
+	at org.h2.command.Parser.readConcat(Parser.java:2347)
+	at org.h2.command.Parser.readCondition(Parser.java:2178)
+	at org.h2.command.Parser.readAnd(Parser.java:2150)
+	at org.h2.command.Parser.readExpression(Parser.java:2142)
+	at org.h2.command.Parser.parseCall(Parser.java:4592)
+	at org.h2.command.Parser.parsePrepared(Parser.java:368)
+	at org.h2.command.Parser.parse(Parser.java:321)
+	at org.h2.command.Parser.parse(Parser.java:293)
+	at org.h2.command.Parser.prepareCommand(Parser.java:258)
+	at org.h2.engine.Session.prepareLocal(Session.java:578)
+	at org.h2.engine.Session.prepareCommand(Session.java:519)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:176)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:164)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp.query(WebApp.java:1029)
+	at org.h2.server.web.WebApp.process(WebApp.java:222)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebServlet.doGet(WebServlet.java:125)
+	at org.h2.server.web.WebServlet.doPost(WebServlet.java:162)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.web.filter.ApplicationContextHeaderFilter.doFilterInternal(ApplicationContextHeaderFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.trace.WebRequestTraceFilter.doFilterInternal(WebRequestTraceFilter.java:110)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:158)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:347)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:263)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.autoconfigure.MetricsFilter.doFilterInternal(MetricsFilter.java:106)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2017-11-23 10:38:51 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Column "NAME" not found; SQL statement:
+SELECT * FROM USER WHERE name LIKE 'f' [42122-196]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:147)
+	at org.h2.expression.CompareLike.optimize(CompareLike.java:93)
+	at org.h2.command.dml.Select.prepare(Select.java:842)
+	at org.h2.command.Parser.prepareCommand(Parser.java:263)
+	at org.h2.engine.Session.prepareLocal(Session.java:578)
+	at org.h2.engine.Session.prepareCommand(Session.java:519)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:176)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:164)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp.query(WebApp.java:1029)
+	at org.h2.server.web.WebApp.process(WebApp.java:222)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebServlet.doGet(WebServlet.java:125)
+	at org.h2.server.web.WebServlet.doPost(WebServlet.java:162)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.web.filter.ApplicationContextHeaderFilter.doFilterInternal(ApplicationContextHeaderFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.trace.WebRequestTraceFilter.doFilterInternal(WebRequestTraceFilter.java:110)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:158)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:347)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:263)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.autoconfigure.MetricsFilter.doFilterInternal(MetricsFilter.java:106)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2017-11-23 10:39:03 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Column "U.NAME" not found; SQL statement:
+SELECT * FROM USER u WHERE u.name LIKE 'f' [42122-196]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:147)
+	at org.h2.expression.CompareLike.optimize(CompareLike.java:93)
+	at org.h2.command.dml.Select.prepare(Select.java:842)
+	at org.h2.command.Parser.prepareCommand(Parser.java:263)
+	at org.h2.engine.Session.prepareLocal(Session.java:578)
+	at org.h2.engine.Session.prepareCommand(Session.java:519)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:176)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:164)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp.query(WebApp.java:1029)
+	at org.h2.server.web.WebApp.process(WebApp.java:222)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebServlet.doGet(WebServlet.java:125)
+	at org.h2.server.web.WebServlet.doPost(WebServlet.java:162)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.web.filter.ApplicationContextHeaderFilter.doFilterInternal(ApplicationContextHeaderFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.trace.WebRequestTraceFilter.doFilterInternal(WebRequestTraceFilter.java:110)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:158)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:347)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:263)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.autoconfigure.MetricsFilter.doFilterInternal(MetricsFilter.java:106)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2017-11-23 10:39:40 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM PRODUCT U WHERE U.NAME CONTAIN[*] '' "; SQL statement:
+SELECT * FROM product u WHERE u.name CONTAIN '' [42000-196]
+2017-11-23 10:39:43 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM PRODUCT U WHERE U.NAME CONTAINS[*] '' "; SQL statement:
+SELECT * FROM product u WHERE u.name CONTAINS '' [42000-196]
+2017-11-23 10:39:54 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM PRODUCT U WHERE U.NAME CONTAINS[*] 'a' "; SQL statement:
+SELECT * FROM product u WHERE u.name CONTAINS 'a' [42000-196]
+2017-11-23 10:40:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM PRODUCT U WHERE U.NAME CONTAINS[*] '%a%' "; SQL statement:
+SELECT * FROM product u WHERE u.name CONTAINS '%a%' [42000-196]
+2017-11-23 10:40:40 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM PRODUCT U WHERE U.NAME CONTAINS[*] '%A%' "; SQL statement:
+SELECT * FROM product u WHERE u.name CONTAINS '%A%' [42000-196]
+2017-11-23 10:40:43 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM PRODUCT U WHERE U.NAME CONTAINS[*] '%i%' "; SQL statement:
+SELECT * FROM product u WHERE u.name CONTAINS '%i%' [42000-196]
+2017-11-23 13:01:47 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM PRODUCT P WHERE P.ID > ? AND P.NAME COLLATE[*] UTF8_GENERAL_CI LIKE ? ORDER BY P.ID ASC LIMIT 0,? "; SQL statement:
+SELECT * FROM Product p WHERE p.id > ? AND p.name COLLATE UTF8_GENERAL_CI LIKE ? ORDER BY p.id ASC LIMIT 0,? [42000-196]
+2017-11-23 15:22:48 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE ORDER[*] (
+    ID BIGINT GENERATED BY DEFAULT AS IDENTITY,
+    STATUS VARCHAR(20) NOT NULL,
+    DATE_CREATED TIMESTAMP NOT NULL,
+    USER_ID BIGINT NOT NULL,
+    PRODUCT_ID BIGINT NOT NULL,
+    CONSTRAINT FK6 FOREIGN KEY(USER_ID) REFERENCES USER(ID),
+  	CONSTRAINT FK7 FOREIGN KEY(PRODUCT_ID) REFERENCES PRODUCT(ID),
+    PRIMARY KEY (ID)
+) "; expected "identifier"; SQL statement:
+create table order (
+    id bigint generated by default as identity,
+    status varchar(20) not null,
+    date_created timestamp not null,
+    user_id bigint not null,
+    product_id bigint not null,
+    CONSTRAINT fk6 FOREIGN KEY(user_id) REFERENCES user(id),
+  	CONSTRAINT fk7 FOREIGN KEY(product_id) REFERENCES product(id),
+    primary key (id)
+) [42001-196]
+2017-11-23 15:23:54 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE ORDER[*] (
+    ID BIGINT GENERATED BY DEFAULT AS IDENTITY,
+    STATUS VARCHAR(20) NOT NULL,
+    DATE_CREATED TIMESTAMP NOT NULL,
+    USER_ID BIGINT NOT NULL,
+    PRODUCT_ID BIGINT NOT NULL,
+    CONSTRAINT FK6 FOREIGN KEY(USER_ID) REFERENCES USER(ID),
+    CONSTRAINT FK7 FOREIGN KEY(PRODUCT_ID) REFERENCES PRODUCT(ID),
+    PRIMARY KEY (ID)
+) "; expected "identifier"; SQL statement:
+create table order (
+    id bigint generated by default as identity,
+    status varchar(20) not null,
+    date_created timestamp not null,
+    user_id bigint not null,
+    product_id bigint not null,
+    CONSTRAINT fk6 FOREIGN KEY(user_id) REFERENCES user(id),
+    CONSTRAINT fk7 FOREIGN KEY(product_id) REFERENCES product(id),
+    primary key (id)
+) [42001-196]
+2017-11-23 15:23:56 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE ORDER[*] (
+    ID BIGINT GENERATED BY DEFAULT AS IDENTITY,
+    STATUS VARCHAR(20) NOT NULL,
+    DATE_CREATED TIMESTAMP NOT NULL,
+    USER_ID BIGINT NOT NULL,
+    PRODUCT_ID BIGINT NOT NULL,
+    CONSTRAINT FK6 FOREIGN KEY(USER_ID) REFERENCES USER(ID),
+    CONSTRAINT FK7 FOREIGN KEY(PRODUCT_ID) REFERENCES PRODUCT(ID),
+    PRIMARY KEY (ID)
+) "; expected "identifier"; SQL statement:
+create table order (
+    id bigint generated by default as identity,
+    status varchar(20) not null,
+    date_created timestamp not null,
+    user_id bigint not null,
+    product_id bigint not null,
+    CONSTRAINT fk6 FOREIGN KEY(user_id) REFERENCES user(id),
+    CONSTRAINT fk7 FOREIGN KEY(product_id) REFERENCES product(id),
+    primary key (id)
+) [42001-196]
+2017-11-23 15:24:37 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE ORDER[*] (
+    ID BIGINT GENERATED BY DEFAULT AS IDENTITY,
+    STATUS VARCHAR(20) NOT NULL,
+    DATE_CREATED TIMESTAMP NOT NULL,
+    USER_ID BIGINT NOT NULL,
+    PRODUCT_ID BIGINT NOT NULL,
+    CONSTRAINT FK6 FOREIGN KEY(USER_ID) REFERENCES USER(ID),
+    CONSTRAINT FK7 FOREIGN KEY(PRODUCT_ID) REFERENCES PRODUCT(ID),
+    PRIMARY KEY (ID),
+) "; expected "identifier"; SQL statement:
+create table order (
+    id bigint generated by default as identity,
+    status varchar(20) not null,
+    date_created timestamp not null,
+    user_id bigint not null,
+    product_id bigint not null,
+    CONSTRAINT fk6 FOREIGN KEY(user_id) REFERENCES user(id),
+    CONSTRAINT fk7 FOREIGN KEY(product_id) REFERENCES product(id),
+    primary key (id),
+) [42001-196]
+2017-11-23 15:24:42 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE ORDER[*] (
+    ID BIGINT GENERATED BY DEFAULT AS IDENTITY,
+    STATUS VARCHAR(20) NOT NULL,
+    DATE_CREATED TIMESTAMP NOT NULL,
+    USER_ID BIGINT NOT NULL,
+    PRODUCT_ID BIGINT NOT NULL,
+    CONSTRAINT FK6 FOREIGN KEY(USER_ID) REFERENCES USER(ID),
+    CONSTRAINT FK7 FOREIGN KEY(PRODUCT_ID) REFERENCES PRODUCT(ID),
+    PRIMARY KEY (ID)
+) "; expected "identifier"; SQL statement:
+create table order (
+    id bigint generated by default as identity,
+    status varchar(20) not null,
+    date_created timestamp not null,
+    user_id bigint not null,
+    product_id bigint not null,
+    CONSTRAINT fk6 FOREIGN KEY(user_id) REFERENCES user(id),
+    CONSTRAINT fk7 FOREIGN KEY(product_id) REFERENCES product(id),
+    primary key (id)
+) [42001-196]
+2017-11-23 15:24:58 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE ORDER[*] (
+    ID BIGINT GENERATED BY DEFAULT AS IDENTITY,
+    STATUS VARCHAR(20) NOT NULL,
+    DATE_CREATED TIMESTAMP NOT NULL,
+    USER_ID BIGINT NOT NULL,
+    PRODUCT_ID BIGINT NOT NULL,
+    CONSTRAINT FK6 FOREIGN KEY(USER_ID) REFERENCES USER(ID),
+    CONSTRAINT FK7 FOREIGN KEY(PRODUCT_ID) REFERENCES PRODUCT(ID),
+    PRIMARY KEY (ID)
+) "; expected "identifier"; SQL statement:
+create table order (
+    id bigint generated by default as identity,
+    status varchar(20) not null,
+    date_created timestamp not null,
+    user_id bigint not null,
+    product_id bigint not null,
+    CONSTRAINT fk6 FOREIGN KEY(user_id) REFERENCES user(id),
+    CONSTRAINT fk7 FOREIGN KEY(product_id) REFERENCES product(id),
+    primary key (id)
+) [42001-196]
+2017-11-23 15:25:12 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE ORDER[*] (
+    ID BIGINT GENERATED BY DEFAULT AS IDENTITY,
+    STATUS VARCHAR(20) NOT NULL,
+    DATE_CREATED TIMESTAMP NOT NULL,
+    USER_ID BIGINT NOT NULL,
+    PRODUCT_ID BIGINT NOT NULL,
+    CONSTRAINT FK6 FOREIGN KEY(USER_ID) REFERENCES USER(ID),
+    CONSTRAINT FK7 FOREIGN KEY(PRODUCT_ID) REFERENCES PRODUCT(ID),
+    PRIMARY KEY (ID)
+) "; expected "identifier"; SQL statement:
+create table order (
+    id bigint generated by default as identity,
+    status varchar(20) not null,
+    date_created timestamp not null,
+    user_id bigint not null,
+    product_id bigint not null,
+    CONSTRAINT fk6 FOREIGN KEY(user_id) REFERENCES user(id),
+    CONSTRAINT fk7 FOREIGN KEY(product_id) REFERENCES product(id),
+    primary key (id)
+) [42001-196]
+2017-11-23 15:25:28 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE ORDER[*] (
+    ID BIGINT GENERATED BY DEFAULT AS IDENTITY,
+    STATUS VARCHAR(20) NOT NULL,
+    DATE_CREATED TIMESTAMP NOT NULL,
+    USER_ID BIGINT NOT NULL,
+    PRODUCT_ID BIGINT NOT NULL,
+    CONSTRAINT FK6 FOREIGN KEY(USER_ID) REFERENCES USER(ID),
+    CONSTRAINT FK7 FOREIGN KEY(PRODUCT_ID) REFERENCES PRODUCT(ID),
+    PRIMARY KEY (ID)
+) "; expected "identifier"; SQL statement:
+create table order (
+    id bigint generated by default as identity,
+    status varchar(20) not null,
+    date_created timestamp not null,
+    user_id bigint not null,
+    product_id bigint not null,
+    CONSTRAINT fk6 FOREIGN KEY(user_id) REFERENCES user(id),
+    CONSTRAINT fk7 FOREIGN KEY(product_id) REFERENCES product(id),
+    primary key (id)
+) [42001-196]
+2017-11-23 15:26:02 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP TABLE ORDER[*] "; expected "identifier"; SQL statement:
+drop table order [42001-196]
+2017-11-23 15:26:09 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP TABLE ORDER[*], "; expected "identifier"; SQL statement:
+drop table order, [42001-196]
+2017-11-23 15:26:37 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE 'order'[*] (
+    ID BIGINT GENERATED BY DEFAULT AS IDENTITY,
+    STATUS VARCHAR(20) NOT NULL,
+    DATE_CREATED TIMESTAMP NOT NULL,
+    USER_ID BIGINT NOT NULL,
+    PRODUCT_ID BIGINT NOT NULL,
+    CONSTRAINT FK6 FOREIGN KEY(USER_ID) REFERENCES USER(ID),
+    CONSTRAINT FK7 FOREIGN KEY(PRODUCT_ID) REFERENCES PRODUCT(ID),
+    PRIMARY KEY (ID)
+) "; expected "identifier"; SQL statement:
+create table 'order' (
+    id bigint generated by default as identity,
+    status varchar(20) not null,
+    date_created timestamp not null,
+    user_id bigint not null,
+    product_id bigint not null,
+    CONSTRAINT fk6 FOREIGN KEY(user_id) REFERENCES user(id),
+    CONSTRAINT fk7 FOREIGN KEY(product_id) REFERENCES product(id),
+    primary key (id)
+) [42001-196]
+2017-11-23 15:35:57 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT ORDERS0_.USER_ID AS USER_ID5_0_0_, ORDERS0_.ID AS ID1_0_0_, ORDERS0_.ID AS ID1_0_1_, ORDERS0_.DATE_CREATED AS DATE_CRE2_0_1_, ORDERS0_.PRODUCT_ID AS PRODUCT_4_0_1_, ORDERS0_.STATUS AS STATUS3_0_1_, ORDERS0_.USER_ID AS USER_ID5_0_1_, PRODUCT1_.ID AS ID1_1_2_, PRODUCT1_.DATE_UPDATED AS DATE_UPD2_1_2_, PRODUCT1_.DESCRIPTION AS DESCRIPT3_1_2_, PRODUCT1_.EXTERNAL_LINKS AS EXTERNAL4_1_2_, PRODUCT1_.IMAGES AS IMAGES5_1_2_, PRODUCT1_.NAME AS NAME6_1_2_, PRODUCT1_.NUMBER_IN_STOCK AS NUMBER_I7_1_2_, PRODUCT1_.PRICE AS PRICE8_1_2_, PRODUCT1_.SPECIFICATIONS AS SPECIFIC9_1_2_, PRODUCT1_.TAGS AS TAGS10_1_2_ FROM ORDER[*] ORDERS0_ INNER JOIN PRODUCT PRODUCT1_ ON ORDERS0_.PRODUCT_ID=PRODUCT1_.ID WHERE ORDERS0_.USER_ID=? ORDER BY ORDERS0_.DATE_CREATED "; expected "identifier"; SQL statement:
+select orders0_.user_id as user_id5_0_0_, orders0_.id as id1_0_0_, orders0_.id as id1_0_1_, orders0_.date_created as date_cre2_0_1_, orders0_.product_id as product_4_0_1_, orders0_.status as status3_0_1_, orders0_.user_id as user_id5_0_1_, product1_.id as id1_1_2_, product1_.date_updated as date_upd2_1_2_, product1_.description as descript3_1_2_, product1_.external_links as external4_1_2_, product1_.images as images5_1_2_, product1_.name as name6_1_2_, product1_.number_in_stock as number_i7_1_2_, product1_.price as price8_1_2_, product1_.specifications as specific9_1_2_, product1_.tags as tags10_1_2_ from order orders0_ inner join product product1_ on orders0_.product_id=product1_.id where orders0_.user_id=? order by orders0_.date_created [42001-196]
+2017-11-23 15:38:14 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT ORDERS0_.USER_ID AS USER_ID5_0_0_, ORDERS0_.ID AS ID1_0_0_, ORDERS0_.ID AS ID1_0_1_, ORDERS0_.DATE_CREATED AS DATE_CRE2_0_1_, ORDERS0_.PRODUCT_ID AS PRODUCT_4_0_1_, ORDERS0_.STATUS AS STATUS3_0_1_, ORDERS0_.USER_ID AS USER_ID5_0_1_, PRODUCT1_.ID AS ID1_1_2_, PRODUCT1_.DATE_UPDATED AS DATE_UPD2_1_2_, PRODUCT1_.DESCRIPTION AS DESCRIPT3_1_2_, PRODUCT1_.EXTERNAL_LINKS AS EXTERNAL4_1_2_, PRODUCT1_.IMAGES AS IMAGES5_1_2_, PRODUCT1_.NAME AS NAME6_1_2_, PRODUCT1_.NUMBER_IN_STOCK AS NUMBER_I7_1_2_, PRODUCT1_.PRICE AS PRICE8_1_2_, PRODUCT1_.SPECIFICATIONS AS SPECIFIC9_1_2_, PRODUCT1_.TAGS AS TAGS10_1_2_ FROM ORDER[*] ORDERS0_ INNER JOIN PRODUCT PRODUCT1_ ON ORDERS0_.PRODUCT_ID=PRODUCT1_.ID WHERE ORDERS0_.USER_ID=? ORDER BY ORDERS0_.DATE_CREATED "; expected "identifier"; SQL statement:
+select orders0_.user_id as user_id5_0_0_, orders0_.id as id1_0_0_, orders0_.id as id1_0_1_, orders0_.date_created as date_cre2_0_1_, orders0_.product_id as product_4_0_1_, orders0_.status as status3_0_1_, orders0_.user_id as user_id5_0_1_, product1_.id as id1_1_2_, product1_.date_updated as date_upd2_1_2_, product1_.description as descript3_1_2_, product1_.external_links as external4_1_2_, product1_.images as images5_1_2_, product1_.name as name6_1_2_, product1_.number_in_stock as number_i7_1_2_, product1_.price as price8_1_2_, product1_.specifications as specific9_1_2_, product1_.tags as tags10_1_2_ from order orders0_ inner join product product1_ on orders0_.product_id=product1_.id where orders0_.user_id=? order by orders0_.date_created [42001-196]
+2017-11-23 15:38:58 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT ORDERS0_.USER_ID AS USER_ID5_0_0_, ORDERS0_.ID AS ID1_0_0_, ORDERS0_.ID AS ID1_0_1_, ORDERS0_.DATE_CREATED AS DATE_CRE2_0_1_, ORDERS0_.PRODUCT_ID AS PRODUCT_4_0_1_, ORDERS0_.STATUS AS STATUS3_0_1_, ORDERS0_.USER_ID AS USER_ID5_0_1_, PRODUCT1_.ID AS ID1_1_2_, PRODUCT1_.DATE_UPDATED AS DATE_UPD2_1_2_, PRODUCT1_.DESCRIPTION AS DESCRIPT3_1_2_, PRODUCT1_.EXTERNAL_LINKS AS EXTERNAL4_1_2_, PRODUCT1_.IMAGES AS IMAGES5_1_2_, PRODUCT1_.NAME AS NAME6_1_2_, PRODUCT1_.NUMBER_IN_STOCK AS NUMBER_I7_1_2_, PRODUCT1_.PRICE AS PRICE8_1_2_, PRODUCT1_.SPECIFICATIONS AS SPECIFIC9_1_2_, PRODUCT1_.TAGS AS TAGS10_1_2_ FROM ORDER[*] ORDERS0_ INNER JOIN PRODUCT PRODUCT1_ ON ORDERS0_.PRODUCT_ID=PRODUCT1_.ID WHERE ORDERS0_.USER_ID=? ORDER BY ORDERS0_.DATE_CREATED "; expected "identifier"; SQL statement:
+select orders0_.user_id as user_id5_0_0_, orders0_.id as id1_0_0_, orders0_.id as id1_0_1_, orders0_.date_created as date_cre2_0_1_, orders0_.product_id as product_4_0_1_, orders0_.status as status3_0_1_, orders0_.user_id as user_id5_0_1_, product1_.id as id1_1_2_, product1_.date_updated as date_upd2_1_2_, product1_.description as descript3_1_2_, product1_.external_links as external4_1_2_, product1_.images as images5_1_2_, product1_.name as name6_1_2_, product1_.number_in_stock as number_i7_1_2_, product1_.price as price8_1_2_, product1_.specifications as specific9_1_2_, product1_.tags as tags10_1_2_ from order orders0_ inner join product product1_ on orders0_.product_id=product1_.id where orders0_.user_id=? order by orders0_.date_created [42001-196]
+2017-11-23 15:40:37 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT ORDERS0_.PRODUCT_ID AS PRODUCT_4_0_0_, ORDERS0_.ID AS ID1_0_0_, ORDERS0_.ID AS ID1_0_1_, ORDERS0_.DATE_CREATED AS DATE_CRE2_0_1_, ORDERS0_.PRODUCT_ID AS PRODUCT_4_0_1_, ORDERS0_.STATUS AS STATUS3_0_1_, ORDERS0_.USER_ID AS USER_ID5_0_1_, USER1_.ID AS ID1_5_2_, USER1_.ADDRESS AS ADDRESS2_5_2_, USER1_.BIRTH_DATE AS BIRTH_DA3_5_2_, USER1_.CITY AS CITY4_5_2_, USER1_.DATE_CREATED AS DATE_CRE5_5_2_, USER1_.EMAIL AS EMAIL6_5_2_, USER1_.FIRST_NAME AS FIRST_NA7_5_2_, USER1_.LAST_NAME AS LAST_NAM8_5_2_, USER1_.PASSWORD AS PASSWORD9_5_2_, USER1_.TITLE AS TITLE10_5_2_, USER1_.USERNAME AS USERNAM11_5_2_ FROM ORDER[*] ORDERS0_ INNER JOIN USER USER1_ ON ORDERS0_.USER_ID=USER1_.ID WHERE ORDERS0_.PRODUCT_ID=? ORDER BY ORDERS0_.DATE_CREATED "; expected "identifier"; SQL statement:
+select orders0_.product_id as product_4_0_0_, orders0_.id as id1_0_0_, orders0_.id as id1_0_1_, orders0_.date_created as date_cre2_0_1_, orders0_.product_id as product_4_0_1_, orders0_.status as status3_0_1_, orders0_.user_id as user_id5_0_1_, user1_.id as id1_5_2_, user1_.address as address2_5_2_, user1_.birth_date as birth_da3_5_2_, user1_.city as city4_5_2_, user1_.date_created as date_cre5_5_2_, user1_.email as email6_5_2_, user1_.first_name as first_na7_5_2_, user1_.last_name as last_nam8_5_2_, user1_.password as password9_5_2_, user1_.title as title10_5_2_, user1_.username as usernam11_5_2_ from order orders0_ inner join user user1_ on orders0_.user_id=user1_.id where orders0_.product_id=? order by orders0_.date_created [42001-196]
+2017-11-23 15:41:00 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT ORDERS0_.PRODUCT_ID AS PRODUCT_4_0_0_, ORDERS0_.ID AS ID1_0_0_, ORDERS0_.ID AS ID1_0_1_, ORDERS0_.DATE_CREATED AS DATE_CRE2_0_1_, ORDERS0_.PRODUCT_ID AS PRODUCT_4_0_1_, ORDERS0_.STATUS AS STATUS3_0_1_, ORDERS0_.USER_ID AS USER_ID5_0_1_, USER1_.ID AS ID1_5_2_, USER1_.ADDRESS AS ADDRESS2_5_2_, USER1_.BIRTH_DATE AS BIRTH_DA3_5_2_, USER1_.CITY AS CITY4_5_2_, USER1_.DATE_CREATED AS DATE_CRE5_5_2_, USER1_.EMAIL AS EMAIL6_5_2_, USER1_.FIRST_NAME AS FIRST_NA7_5_2_, USER1_.LAST_NAME AS LAST_NAM8_5_2_, USER1_.PASSWORD AS PASSWORD9_5_2_, USER1_.TITLE AS TITLE10_5_2_, USER1_.USERNAME AS USERNAM11_5_2_ FROM ORDER[*] ORDERS0_ INNER JOIN USER USER1_ ON ORDERS0_.USER_ID=USER1_.ID WHERE ORDERS0_.PRODUCT_ID=? ORDER BY ORDERS0_.DATE_CREATED "; expected "identifier"; SQL statement:
+select orders0_.product_id as product_4_0_0_, orders0_.id as id1_0_0_, orders0_.id as id1_0_1_, orders0_.date_created as date_cre2_0_1_, orders0_.product_id as product_4_0_1_, orders0_.status as status3_0_1_, orders0_.user_id as user_id5_0_1_, user1_.id as id1_5_2_, user1_.address as address2_5_2_, user1_.birth_date as birth_da3_5_2_, user1_.city as city4_5_2_, user1_.date_created as date_cre5_5_2_, user1_.email as email6_5_2_, user1_.first_name as first_na7_5_2_, user1_.last_name as last_nam8_5_2_, user1_.password as password9_5_2_, user1_.title as title10_5_2_, user1_.username as usernam11_5_2_ from order orders0_ inner join user user1_ on orders0_.user_id=user1_.id where orders0_.product_id=? order by orders0_.date_created [42001-196]
+2017-11-23 15:41:41 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT ORDERS0_.PRODUCT_ID AS PRODUCT_4_0_0_, ORDERS0_.ID AS ID1_0_0_, ORDERS0_.ID AS ID1_0_1_, ORDERS0_.DATE_CREATED AS DATE_CRE2_0_1_, ORDERS0_.PRODUCT_ID AS PRODUCT_4_0_1_, ORDERS0_.STATUS AS STATUS3_0_1_, ORDERS0_.USER_ID AS USER_ID5_0_1_, USER1_.ID AS ID1_5_2_, USER1_.ADDRESS AS ADDRESS2_5_2_, USER1_.BIRTH_DATE AS BIRTH_DA3_5_2_, USER1_.CITY AS CITY4_5_2_, USER1_.DATE_CREATED AS DATE_CRE5_5_2_, USER1_.EMAIL AS EMAIL6_5_2_, USER1_.FIRST_NAME AS FIRST_NA7_5_2_, USER1_.LAST_NAME AS LAST_NAM8_5_2_, USER1_.PASSWORD AS PASSWORD9_5_2_, USER1_.TITLE AS TITLE10_5_2_, USER1_.USERNAME AS USERNAM11_5_2_ FROM ORDER[*] ORDERS0_ INNER JOIN USER USER1_ ON ORDERS0_.USER_ID=USER1_.ID WHERE ORDERS0_.PRODUCT_ID=? ORDER BY ORDERS0_.DATE_CREATED "; expected "identifier"; SQL statement:
+select orders0_.product_id as product_4_0_0_, orders0_.id as id1_0_0_, orders0_.id as id1_0_1_, orders0_.date_created as date_cre2_0_1_, orders0_.product_id as product_4_0_1_, orders0_.status as status3_0_1_, orders0_.user_id as user_id5_0_1_, user1_.id as id1_5_2_, user1_.address as address2_5_2_, user1_.birth_date as birth_da3_5_2_, user1_.city as city4_5_2_, user1_.date_created as date_cre5_5_2_, user1_.email as email6_5_2_, user1_.first_name as first_na7_5_2_, user1_.last_name as last_nam8_5_2_, user1_.password as password9_5_2_, user1_.title as title10_5_2_, user1_.username as usernam11_5_2_ from order orders0_ inner join user user1_ on orders0_.user_id=user1_.id where orders0_.product_id=? order by orders0_.date_created [42001-196]
+2017-11-23 15:41:44 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT ORDERS0_.PRODUCT_ID AS PRODUCT_4_0_0_, ORDERS0_.ID AS ID1_0_0_, ORDERS0_.ID AS ID1_0_1_, ORDERS0_.DATE_CREATED AS DATE_CRE2_0_1_, ORDERS0_.PRODUCT_ID AS PRODUCT_4_0_1_, ORDERS0_.STATUS AS STATUS3_0_1_, ORDERS0_.USER_ID AS USER_ID5_0_1_, USER1_.ID AS ID1_5_2_, USER1_.ADDRESS AS ADDRESS2_5_2_, USER1_.BIRTH_DATE AS BIRTH_DA3_5_2_, USER1_.CITY AS CITY4_5_2_, USER1_.DATE_CREATED AS DATE_CRE5_5_2_, USER1_.EMAIL AS EMAIL6_5_2_, USER1_.FIRST_NAME AS FIRST_NA7_5_2_, USER1_.LAST_NAME AS LAST_NAM8_5_2_, USER1_.PASSWORD AS PASSWORD9_5_2_, USER1_.TITLE AS TITLE10_5_2_, USER1_.USERNAME AS USERNAM11_5_2_ FROM ORDER[*] ORDERS0_ INNER JOIN USER USER1_ ON ORDERS0_.USER_ID=USER1_.ID WHERE ORDERS0_.PRODUCT_ID=? ORDER BY ORDERS0_.DATE_CREATED "; expected "identifier"; SQL statement:
+select orders0_.product_id as product_4_0_0_, orders0_.id as id1_0_0_, orders0_.id as id1_0_1_, orders0_.date_created as date_cre2_0_1_, orders0_.product_id as product_4_0_1_, orders0_.status as status3_0_1_, orders0_.user_id as user_id5_0_1_, user1_.id as id1_5_2_, user1_.address as address2_5_2_, user1_.birth_date as birth_da3_5_2_, user1_.city as city4_5_2_, user1_.date_created as date_cre5_5_2_, user1_.email as email6_5_2_, user1_.first_name as first_na7_5_2_, user1_.last_name as last_nam8_5_2_, user1_.password as password9_5_2_, user1_.title as title10_5_2_, user1_.username as usernam11_5_2_ from order orders0_ inner join user user1_ on orders0_.user_id=user1_.id where orders0_.product_id=? order by orders0_.date_created [42001-196]
+2017-11-23 15:41:47 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT ORDERS0_.PRODUCT_ID AS PRODUCT_4_0_0_, ORDERS0_.ID AS ID1_0_0_, ORDERS0_.ID AS ID1_0_1_, ORDERS0_.DATE_CREATED AS DATE_CRE2_0_1_, ORDERS0_.PRODUCT_ID AS PRODUCT_4_0_1_, ORDERS0_.STATUS AS STATUS3_0_1_, ORDERS0_.USER_ID AS USER_ID5_0_1_, USER1_.ID AS ID1_5_2_, USER1_.ADDRESS AS ADDRESS2_5_2_, USER1_.BIRTH_DATE AS BIRTH_DA3_5_2_, USER1_.CITY AS CITY4_5_2_, USER1_.DATE_CREATED AS DATE_CRE5_5_2_, USER1_.EMAIL AS EMAIL6_5_2_, USER1_.FIRST_NAME AS FIRST_NA7_5_2_, USER1_.LAST_NAME AS LAST_NAM8_5_2_, USER1_.PASSWORD AS PASSWORD9_5_2_, USER1_.TITLE AS TITLE10_5_2_, USER1_.USERNAME AS USERNAM11_5_2_ FROM ORDER[*] ORDERS0_ INNER JOIN USER USER1_ ON ORDERS0_.USER_ID=USER1_.ID WHERE ORDERS0_.PRODUCT_ID=? ORDER BY ORDERS0_.DATE_CREATED "; expected "identifier"; SQL statement:
+select orders0_.product_id as product_4_0_0_, orders0_.id as id1_0_0_, orders0_.id as id1_0_1_, orders0_.date_created as date_cre2_0_1_, orders0_.product_id as product_4_0_1_, orders0_.status as status3_0_1_, orders0_.user_id as user_id5_0_1_, user1_.id as id1_5_2_, user1_.address as address2_5_2_, user1_.birth_date as birth_da3_5_2_, user1_.city as city4_5_2_, user1_.date_created as date_cre5_5_2_, user1_.email as email6_5_2_, user1_.first_name as first_na7_5_2_, user1_.last_name as last_nam8_5_2_, user1_.password as password9_5_2_, user1_.title as title10_5_2_, user1_.username as usernam11_5_2_ from order orders0_ inner join user user1_ on orders0_.user_id=user1_.id where orders0_.product_id=? order by orders0_.date_created [42001-196]
+2017-11-23 15:43:05 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT ORDERS0_.PRODUCT_ID AS PRODUCT_4_0_0_, ORDERS0_.ID AS ID1_0_0_, ORDERS0_.ID AS ID1_0_1_, ORDERS0_.DATE_CREATED AS DATE_CRE2_0_1_, ORDERS0_.PRODUCT_ID AS PRODUCT_4_0_1_, ORDERS0_.STATUS AS STATUS3_0_1_, ORDERS0_.USER_ID AS USER_ID5_0_1_, USER1_.ID AS ID1_5_2_, USER1_.ADDRESS AS ADDRESS2_5_2_, USER1_.BIRTH_DATE AS BIRTH_DA3_5_2_, USER1_.CITY AS CITY4_5_2_, USER1_.DATE_CREATED AS DATE_CRE5_5_2_, USER1_.EMAIL AS EMAIL6_5_2_, USER1_.FIRST_NAME AS FIRST_NA7_5_2_, USER1_.LAST_NAME AS LAST_NAM8_5_2_, USER1_.PASSWORD AS PASSWORD9_5_2_, USER1_.TITLE AS TITLE10_5_2_, USER1_.USERNAME AS USERNAM11_5_2_ FROM ORDER[*] ORDERS0_ INNER JOIN USER USER1_ ON ORDERS0_.USER_ID=USER1_.ID WHERE ORDERS0_.PRODUCT_ID=? ORDER BY ORDERS0_.DATE_CREATED "; expected "identifier"; SQL statement:
+select orders0_.product_id as product_4_0_0_, orders0_.id as id1_0_0_, orders0_.id as id1_0_1_, orders0_.date_created as date_cre2_0_1_, orders0_.product_id as product_4_0_1_, orders0_.status as status3_0_1_, orders0_.user_id as user_id5_0_1_, user1_.id as id1_5_2_, user1_.address as address2_5_2_, user1_.birth_date as birth_da3_5_2_, user1_.city as city4_5_2_, user1_.date_created as date_cre5_5_2_, user1_.email as email6_5_2_, user1_.first_name as first_na7_5_2_, user1_.last_name as last_nam8_5_2_, user1_.password as password9_5_2_, user1_.title as title10_5_2_, user1_.username as usernam11_5_2_ from order orders0_ inner join user user1_ on orders0_.user_id=user1_.id where orders0_.product_id=? order by orders0_.date_created [42001-196]
+2017-11-23 15:52:43 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP TABLE ORDER[*] "; expected "identifier"; SQL statement:
+drop table order [42001-196]
+2017-11-24 10:55:52 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "COUNT[*] PRODUCT"; expected "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT, {"; SQL statement:
+COUNT PRODUCT [42001-196]
+2017-11-24 10:56:18 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Column "ID" not found; SQL statement:
+SELECT COUNT(id) PRODUCT [42122-196]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:147)
+	at org.h2.expression.Aggregate.optimize(Aggregate.java:379)
+	at org.h2.expression.Alias.optimize(Alias.java:51)
+	at org.h2.command.dml.Select.prepare(Select.java:839)
+	at org.h2.command.Parser.prepareCommand(Parser.java:263)
+	at org.h2.engine.Session.prepareLocal(Session.java:578)
+	at org.h2.engine.Session.prepareCommand(Session.java:519)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:176)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:164)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp.query(WebApp.java:1029)
+	at org.h2.server.web.WebApp.process(WebApp.java:222)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebServlet.doGet(WebServlet.java:125)
+	at org.h2.server.web.WebServlet.doPost(WebServlet.java:162)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.web.filter.ApplicationContextHeaderFilter.doFilterInternal(ApplicationContextHeaderFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.trace.WebRequestTraceFilter.doFilterInternal(WebRequestTraceFilter.java:110)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:158)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:347)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:263)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.autoconfigure.MetricsFilter.doFilterInternal(MetricsFilter.java:106)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2017-11-24 10:56:26 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Column "NAME" not found; SQL statement:
+SELECT COUNT(name) PRODUCT [42122-196]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:147)
+	at org.h2.expression.Aggregate.optimize(Aggregate.java:379)
+	at org.h2.expression.Alias.optimize(Alias.java:51)
+	at org.h2.command.dml.Select.prepare(Select.java:839)
+	at org.h2.command.Parser.prepareCommand(Parser.java:263)
+	at org.h2.engine.Session.prepareLocal(Session.java:578)
+	at org.h2.engine.Session.prepareCommand(Session.java:519)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1204)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:176)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:164)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp.query(WebApp.java:1029)
+	at org.h2.server.web.WebApp.process(WebApp.java:222)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebServlet.doGet(WebServlet.java:125)
+	at org.h2.server.web.WebServlet.doPost(WebServlet.java:162)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.web.filter.ApplicationContextHeaderFilter.doFilterInternal(ApplicationContextHeaderFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.trace.WebRequestTraceFilter.doFilterInternal(WebRequestTraceFilter.java:110)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:158)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:347)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:263)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.autoconfigure.MetricsFilter.doFilterInternal(MetricsFilter.java:106)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
